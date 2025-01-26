@@ -10,7 +10,7 @@
 - Member 2: Minha Mariyam -  LBS college of Engineering Kasargod
 - Member 3: Asiya Sidrath M.H -  LBS college of Engineering Kasargod
 ### Hosted Project Link
-[mention your project hosted project link here]
+https://noonu14.github.io/Health-Simplified/
 
 ### Project Description
 Stay on track with your health and wellness goals! Our platform serves as your ultimate to-do list for daily healthy tips, making it easy to maintain a balanced lifestyle. From personalized reminders to curated videos, we provide everything you need in one place.
@@ -43,15 +43,18 @@ For Software:
 ### Project Documentation
 For Software:
 
-# Screenshots (Add at least 3)
-![Screenshot1](Add screenshot 1 here with proper name)
-*Add caption explaining what this shows*
+# Screenshots (Add at least 3)!
 
-![Screenshot2](Add screenshot 2 here with proper name)
-*Add caption explaining what this shows*
+[Screenshot (172)](https://github.com/user-attachments/assets/6a40f44c-816c-4d27-8370-06ba461ae493)
+Front Page
 
-![Screenshot3](Add screenshot 3 here with proper name)
-*Add caption explaining what this shows*
+![Screenshot (176)](https://github.com/user-attachments/assets/04e97634-68b2-45a8-adf3-acdfc03cb148)
+
+Use can enter their To-Do List and even can customize it!!
+
+![Screenshot (177)](https://github.com/user-attachments/assets/1323e40a-d93f-4ac3-921a-05094d4ec94e)
+
+Shows us a beginner friendly yoga poses!
 
 # Diagrams
 ![Workflow](Add your workflow/architecture diagram here)
@@ -67,7 +70,8 @@ For Hardware:
 *Add caption explaining the schematic*
 
 # Build Photos
-![Team](Add photo of your team here)
+![WhatsApp Image 2025-01-26 at 11 07 17 AM](https://github.com/user-attachments/assets/62ccb0c1-b222-4948-810c-79ab666476f3)
+
 
 
 ![Components](Add photo of your components here)
@@ -81,16 +85,15 @@ For Hardware:
 
 ### Project Demo
 # Video
-[Add your demo video link here]
-*Explain what the video demonstrates*
+https://drive.google.com/file/d/1yu4U4ScUW04smEu5cOflSi0mbixjZnnT/view?usp=sharing
+demonstrates the whole working of the website!
 
 # Additional Demos
 [Add any extra demo materials/links]
 
 ## Team Contributions
-- [Name 1]: [Specific contributions]
-- [Name 2]: [Specific contributions]
-- [Name 3]: [Specific contributions]
-
+Neenu Josey - Code implementation and creating website
+Minha Mariyam -  Ideas images gathering forbackground
+Asiya Sidrath M.H -  Videography and images gathering forbackground
 ---
 Made with ❤️ at TinkerHub
