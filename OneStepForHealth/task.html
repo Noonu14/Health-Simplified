@@ -1,0 +1,247 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Health Tasks</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* General Layout */
+    body {
+      display: flex;
+      margin: 0;
+      font-family: Arial, sans-serif;
+      overflow: auto;
+    }
+
+    /* Left Section */
+    .left-section {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      background-color: #f0f0f000;
+      padding: 30px;
+    }
+
+    .left-section img {
+      width: 80%;
+      max-width: 300px;
+      margin: 20px 0;
+      cursor: pointer;
+      border: 2px solid #ccc;
+      border-radius: 10px;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .left-section img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Right Section */
+    .right-section {
+      flex: 1;
+      padding: 20px;
+      background-color: #ffffff00;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      font-size: 50px;
+      margin: 0;
+    }
+
+    #task-list {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    li {
+      margin: 10px 0;
+    }
+
+    button {
+      background-color: #4caf50;
+      color: rgb(255, 255, 255);
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 1rem;
+      margin-top: 20px;
+      transition: background-color 0.3s;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+
+    #new-task-input {
+      width: calc(100% - 30px);
+      padding: 10px;
+      font-size: 1rem;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+   /* Full-screen celebration */
+#celebration {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw; /* Ensure it spans the full width of the screen */
+  height: 100vh; /* Ensure it spans the full height of the screen */
+  background: url('collage.png') no-repeat center center fixed; /* Prevent repetition */
+  background-size: cover; /* Ensure the image covers the entire screen */
+  z-index: 9999;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden; /* Ensure no overflow */
+}
+ 
+
+    #celebration h2 {
+      font-size: 200px;
+      font-weight: bold;
+      color: #ffffff;
+    }
+
+    .confetti {
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      background-color: #ff6347;
+      border-radius: 50%;
+      animation: fall linear infinite;
+      top: -10px;
+    }
+
+    /* Falling animation */
+    @keyframes fall {
+      0% {
+        transform: translateY(0);
+      }
+      100% {
+        transform: translateY(100vh);
+      }
+    }
+
+  </style>
+</head>
+<body>
+  <!-- Left Section -->
+  <div class="left-section">
+    <img src="GuaSha.png" alt="GuaSha" onclick="window.open('https://www.instagram.com/reel/DAiX72xoP6j/?igsh=MTNqaXZxc3RwdGs4aw==', '_blank')">
+    <img src="TonedBelly.png" alt="Toned Belly" onclick="window.open('https://www.instagram.com/reel/DFJ4SmCubQP/?igsh=MTIyb3M1OHNzOWYwZg==', '_blank')">
+    <img src="HealthyHeart.png" alt="Healthy Heart" onclick="window.open('https://www.veganfoodandliving.com/vegan-diet/heart-healthy-foods-vegan-diet/', '_blank')">
+    <img src="yoga.png" alt="Yoga" onclick="window.location.href='yoga.html'">
+  </div>
+
+  <!-- Right Section -->
+  <div class="right-section">
+    <header>
+      <h1>Today's Health Tasks</h1>
+    </header>
+    <main>
+      <ul id="task-list">
+        <li>
+          <label><input type="checkbox" class="task" value="Drink a glass of water"> Drink a glass of water</label>
+        </li>
+        <li>
+          <label><input type="checkbox" class="task" value="Do 10 push ups"> Do 10 push ups</label>
+        </li>
+        <li>
+          <label><input type="checkbox" class="task" value="Eat at least one fruit today"> Eat at least one fruit today</label>
+        </li>
+        <li>
+          <label><input type="checkbox" class="task" value="Stretch for 5 minutes before bedtime"> Stretch for 5 minutes before bedtime</label>
+        </li>
+      </ul>
+      <input type="text" id="new-task-input" placeholder="Add a new task">
+      <button onclick="addTask()">Add Task</button>
+      <button id="navigateButton" onclick="completeTasks()">finished</button>
+    </main>
+    
+    
+  </div>
+
+  <!-- Full-screen Celebration -->
+  <div id="celebration">
+    <h2>Hurray!</h2>
+  </div>
+
+  <script>
+    function addTask() {
+      const taskInput = document.getElementById('new-task-input');
+      const taskList = document.getElementById('task-list');
+  
+      if (taskInput.value.trim() !== '') {
+        const newTask = document.createElement('li');
+        newTask.innerHTML = `
+          <label><input type="checkbox" class="task" value="${taskInput.value.trim()}"> ${taskInput.value.trim()}</label>
+        `;
+        taskList.appendChild(newTask);
+        taskInput.value = ''; // Clear the input field
+      } else {
+        alert('Please enter a valid task.');
+      }
+    }
+  
+    function completeTasks() {
+      const tasks = document.querySelectorAll('.task');
+      const incompleteTasks = [];
+
+      tasks.forEach(task => {
+        if (!task.checked) {
+          incompleteTasks.push(task.value);
+        }
+      });
+
+      if (incompleteTasks.length === 0) {
+        
+    document.getElementById("navigateButton").onclick = function() {
+        window.location.href = "hurreay.html"; // Replace with your destination URL
+    };
+
+      } else {
+        alert(`You missed the following tasks:\n\n${incompleteTasks.join('\n')}`);
+      }
+    }
+
+    function showCelebration() {
+      const celebration = document.getElementById('celebration');
+      const leftSection = document.getElementById('left-section');
+      
+      // Hide the left section (images)
+      leftSection.style.display = 'display';
+
+      // Show the celebration screen
+      celebration.style.display = 'block';
+
+      // Generate confetti
+      for (let i = 0; i < 100; i++) {
+        const confetti = document.createElement('div');
+        confetti.classList.add('confetti');
+        confetti.style.left = `${Math.random() * 100}vw`; // Use backticks for string interpolation
+        confetti.style.animationDuration = `${Math.random() * 3 + 2}s`; // Use backticks for string interpolation
+        confetti.style.backgroundColor = getRandomColor();
+        celebration.appendChild(confetti);
+      }
+    }
+
+    function getRandomColor() {
+      const colors = ['#ff6347', '#ffa500', '#32cd32', '#1e90ff', '#ff69b4'];
+      return colors[Math.floor(Math.random() * colors.length)];
+    }
+  </script>
+</body>
+</html>
+```

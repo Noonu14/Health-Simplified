@@ -1,0 +1,101 @@
+/* General Styles */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-image: url("withoutspacing.png");
+    background-repeat: no-repeat;
+    background-size: cover; /* Ensure the image covers the entire background */
+    background-position: center; /* Center the background image */
+    background-repeat: no-repeat; /* Prevent the background image from repeating */
+    text-align: center;
+    color: #333;
+}
+
+h1 {
+    font-size: 8rem;
+    font-family: Garamond;
+    color: #fafafa;
+    cursor: pointer;
+    
+    margin: 0; /* Remove default margin */
+}
+
+/* Add custom animation duration */
+h1.animate__animated {
+    --animate-duration: 3s; /* Customize animation duration */
+}
+
+
+h2 {
+    font-size: 1.5rem;
+    font-family: Courier New;
+    color: #dcdcdc;
+    margin: 10px 0 0; /* Add margin only at the top */
+}
+
+/* Center Content */
+.center-screen {
+    height: 100vh;
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    justify-content: center; /* Center elements vertically */
+    align-items: center; /* Center elements horizontally */
+    color: white;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Tasks Page */
+main {
+    padding: 20px;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    font-size: 1.5rem;
+    margin: 15px 0;
+}
+
+button {
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    margin-top: 20px;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+/* Celebration Animation */
+#celebration {
+    margin-top: 50px;
+}
+
+.stars {
+    width: 100%;
+    height: 100vh;
+    background: radial-gradient(closest-side, transparent, #f0f8ff);
+    animation: fly 3s infinite;
+}
+
+@keyframes fly {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 100vw 100vh;
+    }
+}
+
